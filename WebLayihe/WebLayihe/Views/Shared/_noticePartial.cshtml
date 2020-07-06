@@ -1,0 +1,36 @@
+﻿@model WebLayihe.ViewModels.VmNotice
+
+<!-- About > notice  Start -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="notice-right-wrapper mb-25 pb-25">
+                <h3>@Model.About.VideoTitle</h3>
+                <div class="notice-video" style="background:url('/Uploads/@Model.About.VideoBgImage')">
+                    <div class="video-icon video-hover">
+                        <a class="video-popup" href="@Model.About.VideoLink">
+                            <i class="zmdi zmdi-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="notice-left-wrapper">
+                <h3>@Model.About.NoticeTitle</h3>
+                <div class="notice-left">
+                    @foreach (var item in Model.Notices)
+                    {
+                        <div class="single-notice-left mb-23 pb-20">
+                            <h4>@item.AddedDate.Date.Day, @item.AddedDate.Date.ToString("MMMM") @item.AddedDate.Date.Year</h4>
+                            <p>@item.Content</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About > notice  End -->

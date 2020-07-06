@@ -1,0 +1,24 @@
+﻿@model List<WebLayihe.Models.Blog>
+
+<!-- three blogs sidebar Area Start -->
+<div class="single-blog-widget mb-50">
+    <h3>latest post</h3>
+    @foreach (var item in Model)
+    {
+        <div class="single-post mb-30">
+            <div class="single-post-img">
+                <a href="blog-details.html">
+                    <img src="~/Uploads/@item.Image" width="96" height="84" alt="post">
+                    <div class="blog-hover">
+                        <i class="fa fa-link"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="single-post-content">
+                <h4><a href="blog-details.html">@item.Title</a></h4>
+                <p>By @item.Author  /  @item.CreateDate.Date.ToString("MMM d, yyyy")</p>
+            </div>
+        </div>
+    }
+</div>
+<!--three blogs sidebar  Area End -->

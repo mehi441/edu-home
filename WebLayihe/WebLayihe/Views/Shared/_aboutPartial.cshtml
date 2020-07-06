@@ -1,0 +1,22 @@
+﻿@model WebLayihe.Models.About
+
+<!-- About Start -->
+<div class="about-area pt-80 pb-155">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="about-content">
+                    <h2>WELCOME TO <span>EDUHOME</span></h2>
+                    @Html.Raw(Model.Content)
+                    <a class="default-btn" href="#">view courses</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="about-img">
+                    <img src="~/Uploads/@Model.Image" alt="about">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->

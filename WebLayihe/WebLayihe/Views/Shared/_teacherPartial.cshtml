@@ -1,0 +1,40 @@
+﻿@model List<WebLayihe.Models.Teacher>
+
+
+<!-- Teacher Start -->
+<div class="teacher-area pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title text-center">
+                    <img src="~/Public/img/icon/section.png" alt="title">
+                    <h2>meet our teachers</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="single-teacher">
+                        <div class="single-teacher-img">
+                            <a href="@Url.Action("Index","TeacherDetail", new { id= item.Id})"><img src="~/Uploads/@item.Image" alt="teacher"></a>
+                        </div>
+                        <div class="single-teacher-content text-center">
+                            <h2><a href="@Url.Action("Index","TeacherDetail", new { id= item.Id})">@item.Fullname</a></h2>
+                            <h4>@item.Occupation.Name</h4>
+                            <ul>
+                                @foreach (var icon in item.Socials)
+                                {
+                                    <li><a href="@icon.Link"><i class="@icon.Icon"></i></a></li>
+
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Teacher End -->

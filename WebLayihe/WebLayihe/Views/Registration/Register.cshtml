@@ -1,0 +1,91 @@
+﻿@model WebLayihe.Models.User
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center" style="background:url(/Public/img/banner/banner.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>Registration</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Login start -->
+<div class="login-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <div class="login">
+                    <div class="login-form-container">
+                        <div class="login-text">
+                            <h2>Registration</h2>
+                            <span>Please fill  All  fields bellow.</span>
+                        </div>
+                        <div class="login-form">
+                            <form  enctype="multipart/form-data" method="post">
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m=> m.Name)
+                                    @Html.TextBoxFor(m => m.Name, null, new { @class = "form-control form-control-user"})
+                                    @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Surname)
+                                    @Html.TextBoxFor(m => m.Surname, null, new { @class = "form-control form-control-user" })
+                                    @Html.ValidationMessageFor(m => m.Surname, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Username)
+                                    @Html.TextBoxFor(m => m.Username, null, new { @class = "form-control form-control-user" })
+                                    @Html.ValidationMessageFor(m => m.Username, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password)
+                                    @Html.TextBoxFor(m => m.Password, null, new { @class = "form-control form-control-user", @type = "password" })
+                                    @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email)
+                                    @Html.TextBoxFor(m => m.Email, null, new { @class = "form-control form-control-user" })
+                                    @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Phone)
+                                    @Html.TextBoxFor(m => m.Phone, null, new { @class = "form-control form-control-user" })
+                                    @Html.ValidationMessageFor(m => m.Phone, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Image)
+                                    @Html.TextBoxFor(m => m.ImageFile, null, new { @class = "form-control form-control-user", @type = "file" })
+                                    @Html.ValidationMessageFor(m => m.ImageFile, null, new { @class = "text-danger" })
+                                </div>
+
+                                <input type="hidden" name="AddedDate" value="@DateTime.Now.Date" />
+                                <button class="btn btn-primary btn-user btn-block">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login end -->

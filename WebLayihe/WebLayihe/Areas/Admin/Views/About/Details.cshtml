@@ -1,0 +1,67 @@
+﻿@model WebLayihe.Models.About
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>About</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @(Html.Raw(Model.Content))
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="~/Uploads/@Model.Image" alt="@Model.Image" width="100" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoBgImage)
+        </dt>
+
+        <dd>
+            <img src="~/Uploads/@Model.VideoBgImage" alt="@Model.VideoBgImage" width="100" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoticeTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoticeTitle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Update", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

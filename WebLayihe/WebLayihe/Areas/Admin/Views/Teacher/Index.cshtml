@@ -1,0 +1,107 @@
+﻿@model IEnumerable<WebLayihe.Models.Teacher>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@*index Of Teacher*@
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeamLeader)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Development)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Design)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Innovation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Communication)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OccupationId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fullname)
+        </td>
+        <td>
+            @Html.Raw(item.Content)
+        </td>
+        <td>
+            <img src="~/Uploads/@item.Image" alt="image Text" width="133" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeamLeader)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Development)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Design)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Innovation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Communication)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occupation.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new { id=item.Id }) |
+            <a href="@Url.Action("Delete", "Teacher", new { id=item.Id })" onclick="return confirm('Are you Sure ??')">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<WebLayihe.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Explanation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CatagoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillLevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assesments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Explanation)
+        </td>
+        <td>
+            @(Html.Raw(item.Content))
+        </td>
+        <td>
+            <img src="~/Uploads/@item.Image" alt="Image" width="130" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Catagory.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassDuration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkillLevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assesments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new { id = item.Id }) |
+            <a href="@Url.Action("Delete", "Course", new { id=item.Id })" onclick="return confirm('ARE YOU sure ??')">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

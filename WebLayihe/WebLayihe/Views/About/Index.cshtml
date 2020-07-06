@@ -1,0 +1,41 @@
+﻿@model WebLayihe.ViewModels.VmAbout
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Banner Area Start -->
+
+@{
+    Html.RenderPartial("~/Views/Shared/_headerPartial.cshtml", Model.Header);
+}
+
+<!-- Banner Area End -->
+<!-- About Start -->
+
+@{
+    Html.RenderPartial("~/Views/Shared/_aboutPartial.cshtml", Model.VmNotice.About);
+}
+
+<!-- About End -->
+<!-- Teacher Start -->
+
+@{
+    Html.RenderPartial("~/Views/Shared/_teacherPartial.cshtml", Model.Teachers);
+}
+
+<!-- Teacher End -->
+<!-- Testimonial Area Start -->
+@{
+    Html.RenderPartial("~/Views/Shared/_aboutSlidePartial.cshtml", Model.VmAboutSlider);
+}
+<!-- Testimonial Area End -->
+<!-- Notice Start -->
+<section class="notice-area two pt-140 pb-100">
+
+@{
+    Html.RenderPartial("~/Views/Shared/_noticePartial.cshtml", Model.VmNotice);
+}
+
+</section>
+<!-- Notice End -->

@@ -1,0 +1,26 @@
+﻿@model WebLayihe.ViewModels.VmAboutSlider
+
+<!-- Testimonial Area Start -->
+<div class="testimonial-area pt-110 pb-105 text-center" style="background: url('/Uploads/@Model.Setting.BgImage')">
+    <div class="container">
+        <div class="row">
+            <div class="testimonial-owl owl-theme owl-carousel">
+                <div class="col-md-8 col-md-offset-2 col-sm-12">
+                    <div class="single-testimonial">
+                        <div class="testimonial-info">
+                            <div class="testimonial-img">
+                                <img src="~/Uploads/@Model.AboutSlide.Image" alt="testimonial">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>@Model.AboutSlide.Content</p>
+                                <h4>@Model.AboutSlide.Fullname</h4>
+                                <h5>@Model.AboutSlide.Occupation.Name</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial Area End -->

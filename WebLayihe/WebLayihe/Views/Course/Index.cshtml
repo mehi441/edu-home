@@ -1,0 +1,60 @@
+﻿@model WebLayihe.ViewModels.VmCourse
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Banner Area Start -->
+
+@{
+    Html.RenderPartial("~/Views/Shared/_headerPartial.cshtml", Model.Header);
+}
+
+
+<!-- Banner Area End -->
+<!-- Course Start -->
+<div class="course-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="course-title">
+                    <h3>search courses</h3>
+                </div>
+                <div class="course-form">
+                    <form action="@Url.Action("Index","Course")" id="search">
+
+                        <input type="text" placeholder="Search..." name="search" />
+                        <button  type="submit">search</button>
+
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.Courses)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-course mb-70">
+                        <div class="course-img">
+                            <a href="@Url.Action("Index","CourseDetail" ,new { id=item.Id})">
+                                <img src="~/Uploads/@item.Image" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a href="@Url.Action("Index","CourseDetail" ,new { id=item.Id})">@item.Title</a></h3>
+                            <p>@item.Explanation</p>
+                            <a class="default-btn" href="@Url.Action("Index","CourseDetail" ,new { id=item.Id})">read more</a>
+                        </div>
+                    </div>
+                </div>
+                                                    }
+
+        </div>
+    </div>
+</div>
+<!-- Course End -->
